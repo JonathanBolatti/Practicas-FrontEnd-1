@@ -7,7 +7,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
-
+   
 }
 
 .descuento {
@@ -22,7 +22,7 @@ body {
 
 .descuento-text {
     position: absolute;
-    width: 200px;
+    width: 100%;
     height: 18px;
     left: 10px;
     top: 10px;
@@ -30,26 +30,64 @@ body {
 
 
 /* MAIN BARRA STICKY */
+
+
+.button-home{
+    display: inline-block;
+    width: 30%;
+    display: grid;
+    grid-auto-flow: column;
+    text-decoration: none;
+}
+
 .barra-sticky {
+    display: flex;
     position: sticky;
     background: #00669F;
     width: 100%;
     height: 111px;
     left: 0;
-    top: 38px;
+    top: 5px;
     box-shadow: 0px 4px 20px;
     z-index: 1;
+}
+.logo-img{
+    width: 100px;
+    height: 110px;
+    margin-left: 20px;
+    background: #00669F  ;
 }
 
 .barra-text {
     position: relative;
-    width: 200px;
+    width: 100%;
     font-size: 40px;
     font-weight: bold;
     line-height: 47px;
     font-style: normal;
-    left: 28px;
-    top: 30px;
+    margin: auto 5px;
+    color: #FFFFFF;
+   
+}
+
+/* NAV_MENU */
+
+.nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #001D2D;
+    position: absolute;
+    left: 0%;
+    top: 145px;
+    width: 100%;
+    height: 40px;
+}
+
+.nav-button {
+    text-decoration: none;
+    color: #FFF9F9;
+    margin: auto 20px;
 }
 
 /* MAIN SECTION CARDS */
@@ -75,39 +113,40 @@ body {
     padding: 35px 0;
     position: relative;
     text-align: center;
-    
+
 }
 
 
-.card:hover{
+.card:hover {
     transition: .3s all;
     transform: scale(1.1);
-  
+
 }
 
 .portada-card {
     width: 100%;
     margin-bottom: -5px;
 }
-.heart-card{
+
+.heart-card {
     position: absolute;
 
     left: 30px;
     top: 60px;
-  
+
 }
 
 
 .logo-card {
     border-radius: 50%;
     position: absolute;
-    left: 145px;
-    top: 230px;
+    left: calc(50% - 60px);
+    top: 210px;
 }
 
 .descripcion-card {
     background: #F3F3F3;
-    height: 50vh;
+    height: 60vh;
 }
 
 
@@ -142,8 +181,9 @@ body {
     font-size: 15px;
 }
 
-.button-card:hover{
-    background: #1CD1B0;;
+.button-card:hover {
+    background: #1CD1B0;
+    ;
     transition: .3s all;
 }
 
@@ -151,6 +191,7 @@ body {
 footer {
     display: flex;
     position: absolute;
+    bottom: -1;
     background: #00669F;
     overflow: hidden;
     width: 100%;

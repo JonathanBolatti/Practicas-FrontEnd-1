@@ -199,12 +199,22 @@ section button {
     margin: 40px auto;
 }
 
+<<<<<<< HEAD
 
 
 
 
 /* SECTION FOOTER */
 
+=======
+/* para desactivar el slider en version desktop */
+.mobile-version {
+    display: none;
+}
+
+
+/* SECTION FOOTER */
+>>>>>>> cc91eb49f0a1813083d8219099d141ea7a359baa
 
 .footer-sup {
     background-color: var(--rojoBrillante);

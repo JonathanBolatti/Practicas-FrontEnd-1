@@ -199,11 +199,10 @@ section button {
     margin: 40px auto;
 }
 
+/* para desactivar el slider en version desktop */
 .mobile-version {
-    /* display: none; */
-
+    display: none;
 }
-
 
 
 /* SECTION FOOTER */
@@ -439,7 +438,7 @@ form .newsletter_submit {
 /* VERSION MOBILE */
 
 
-@media (max-width: 375px) {
+@media (min-width: 370px) {
 
     .testimony-cards {
         display: none;

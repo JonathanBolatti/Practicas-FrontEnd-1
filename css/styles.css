@@ -199,20 +199,12 @@ section button {
     margin: 40px auto;
 }
 
-/* para desactivar el slider en version desktop */
-.mobile-version {
-<<<<<<< HEAD
-    display: none;
-=======
-  display: none;
->>>>>>> bbcab06158a2da1dc5bb0d6f9bf3ef2ab96ccc1a
-}
+
+
 
 
 /* SECTION FOOTER */
-footer {
-    background-color: wheat;
-}
+
 
 .footer-sup {
     background-color: var(--rojoBrillante);
@@ -341,6 +333,12 @@ form .newsletter_submit {
 /* RESPOSIVE */
 
 @media (max-width:1250px) {
+
+    /* para desactivar el slider en la version desktop */
+/* .mobile-version {
+    display: none;
+} */
+
     .article-one img {
         width: 450px;
     }
@@ -367,6 +365,7 @@ form .newsletter_submit {
 /* MENU HAMBURGER */
 
 @media (max-width:1100px) {
+
     .nav-label {
         display: block;
         cursor: pointer;
@@ -394,7 +393,9 @@ form .newsletter_submit {
 }
 
 
-@media (max-width:900px) {
+@media (max-width:900px){
+
+    
     .article-one div h2 {
         font-size: 32px;
         line-height: 40px;
@@ -442,11 +443,12 @@ form .newsletter_submit {
 /* VERSION MOBILE */
 
 
-@media (min-width: 370px) {
+@media (max-width: 450px) {
 
     .testimony-cards {
         display: none;
     }
+    
 
     /* nav-bar */
 
@@ -617,7 +619,7 @@ form .newsletter_submit {
     }
 
     .footer-inf {
-        min-height: 40vh;
+        min-height: 100vh;
         flex-direction: column-reverse;
     }
 

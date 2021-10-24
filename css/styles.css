@@ -201,18 +201,11 @@ section button {
 
 /* para desactivar el slider en version desktop */
 .mobile-version {
-<<<<<<< HEAD
     display: none;
-=======
-  display: none;
->>>>>>> bbcab06158a2da1dc5bb0d6f9bf3ef2ab96ccc1a
 }
 
 
 /* SECTION FOOTER */
-footer {
-    background-color: wheat;
-}
 
 .footer-sup {
     background-color: var(--rojoBrillante);

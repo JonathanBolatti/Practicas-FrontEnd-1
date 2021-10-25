@@ -326,19 +326,21 @@ form .newsletter_submit {
 }
 
 
+
+
+
+
 /* RESPOSIVE */
 
 
-@media (max-width:1600px) {
+@media (max-width:1300px) {
 
-    /* para desactivar el slider en la version desktop */
     .mobile-version {
     display: none;
 }
 
 @media (max-width:1250px) {
 
-    /* para desactivar el slider en la version desktop */
     .mobile-version {
     display: none;
 }
@@ -396,7 +398,7 @@ form .newsletter_submit {
 
 }
 
-
+/* 
 @media (max-width:900px) {
 
 
@@ -441,7 +443,7 @@ form .newsletter_submit {
         margin: auto 20px;
         padding: 7px 20px;
     }
-}
+} */
 
 
 /* VERSION MOBILE */
@@ -640,7 +642,7 @@ form .newsletter_submit {
 }
 
 .footer-inf {
-    min-height: 100vh;
+    min-height: 80vh;
     flex-direction: column-reverse;
 }
 
@@ -651,7 +653,7 @@ form .newsletter_submit {
 
 .footer-suscripcion p {
     position: relative;
-    top: 300px;
+    top: 400px;
     text-align: center;
 
 }
@@ -661,7 +663,7 @@ form .newsletter_submit {
     align-items: center;
     margin: auto 20px;
     position: relative;
-    bottom: 200px;
+    bottom: 80px;
 }
 
 .social-media img {
@@ -685,6 +687,4 @@ form .newsletter_submit {
     left: calc(50% - 90px);
     top: 32px;
 }
-
-
 }

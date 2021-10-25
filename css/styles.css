@@ -449,7 +449,7 @@ form .newsletter_submit {
     /* VERSION MOBILE */
 
 
-    @media (max-width: 450px) {
+    @media (max-width: 650px) {
 
         .testimony-cards {
             display: none;
@@ -496,6 +496,13 @@ form .newsletter_submit {
         .article-one div button {
             margin: 30px auto 5px;
         }
+
+        .article-one div img {
+            width: 370px;
+        }
+
+
+
 
         /* article two */
 

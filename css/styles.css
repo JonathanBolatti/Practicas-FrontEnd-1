@@ -185,7 +185,7 @@ nav button {
 
 /* SECTION TESTIMONY CARDS */
 
-/* para ocultar vista testimony card mobile */
+
 .mobile-version {
     display: none;
 }
@@ -248,10 +248,7 @@ section button {
 }
 
 
-
 /* SECTION FOOTER */
-
-
 
 .footer-sup {
     background-color: var(--rojoBrillante);
@@ -309,7 +306,7 @@ section button {
     font-size: 25px;
     margin: auto 0px auto 10px;
     padding: 40px 0 20px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .footer-inf .nav-links {

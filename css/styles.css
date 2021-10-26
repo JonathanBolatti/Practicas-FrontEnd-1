@@ -22,8 +22,25 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 65px 165px;
+    align-items: baseline;
+    padding: 65px 100px;
+}
+
+figure {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+
+figure img {
+    width: 20px;
+}
+
+figure h1 {
+    font-size: 2rem;
+    color: var(--azulOscuro);
+    font-weight: bold;
+
 }
 
 /* para ocultar el icono menu hamburger */
@@ -32,11 +49,38 @@ input {
     display: none;
 }
 
-nav div a {
-    text-decoration: none;
-    font-weight: 500;
+
+nav ul {
+    display: inline-flex;
+    font-weight: 600;
+    list-style: none;
+}
+
+li a {
+    align-items: center;
     color: var(--azulOscuro);
-    margin: 0px 10px 0px 10px;
+    text-decoration: none;
+    padding: 10px 20px 10px 0px;
+    font-weight: inherit;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    margin-right: 10px;
+}
+
+li a::after {
+    content: "";
+    display: inline-flex;
+    background: var(--rojoBrillante);
+    width: 60%;
+    position: relative;
+    bottom: 10px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .3s;
+
+}
+
+li a:hover {
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 nav button {
@@ -141,6 +185,12 @@ nav button {
 
 /* SECTION TESTIMONY CARDS */
 
+/* para ocultar vista testimony card mobile */
+.mobile-version {
+    display: none;
+}
+
+
 section h4 {
     font-size: 40px;
     color: var(--azulOscuro);
@@ -202,6 +252,7 @@ section button {
 /* SECTION FOOTER */
 
 
+
 .footer-sup {
     background-color: var(--rojoBrillante);
     width: 100%;
@@ -215,7 +266,7 @@ section button {
     width: 50%;
     font-size: 40px;
     color: var(--blancoNatural);
-    padding: 40px 100px 40px 100px;
+    padding: 40px 20px 40px 40px;
     margin: auto 40px;
 }
 
@@ -263,6 +314,7 @@ section button {
 .footer-inf .nav-links {
     display: flex;
     flex-direction: column;
+    padding-bottom: 32px;
 }
 
 .nav-links a {
@@ -327,80 +379,65 @@ form .newsletter_submit {
 
 
 
+/* MENU HAMBURGER */
+
+@media screen and (max-width:1100px) {
+
+    .nav-label {
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 150px;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--rojoBrillante);
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+
+    }
+
+    .nav-input:checked+ul {
+        clip-path: circle(100% at center);
+    }
+
+    li a {
+        transition: 0.8s all;
+    }
+
+    li a:hover {
+        color: var(--blancoNatural);
+    }
+
+}
 
 
+@media (max-width:900px) {
 
-/* RESPOSIVE */
 
+    nav {
+        align-items: center;
+    }
 
-@media (max-width:1300px) {
+    figure {
+        padding-bottom: 18px;
+    }
 
-    .mobile-version {
+    nav button {
         display: none;
     }
 
-    @media (max-width:1250px) {
-
-        .mobile-version {
-            display: none;
-        }
-
-        .article-one img {
-            width: 450px;
-        }
-
-        .article-one div h2 {
-            font-size: 40px;
-            line-height: 50px;
-
-        }
-
-        .article-one div p {
-            margin: 0px 50px 0 0;
-
-        }
-
-        .footer-sup b {
-            padding: 20px 50px 40px 50px;
-
-        }
-
+    .article-one  {
+       flex-direction: column-reverse;
+       text-align: center;
     }
-
-
-    /* MENU HAMBURGER */
-
-    @media (max-width:1100px) {
-
-        .nav-label {
-            display: block;
-            cursor: pointer;
-        }
-
-        .nav-menu {
-            display: flex;
-            justify-content: space-evenly;
-            flex-direction: column;
-            align-items: center;
-            position: fixed;
-            top: 150px;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--rojoBrillante);
-            clip-path: circle(0 at center);
-            transition: clip-path 1s ease-in-out;
-        }
-
-        .nav-input:checked+.nav-menu {
-            clip-path: circle(100% at center);
-        }
-
-    }
-
-    /* 
-@media (max-width:900px) {
-
 
     .article-one div h2 {
         font-size: 32px;
@@ -409,7 +446,7 @@ form .newsletter_submit {
     }
 
     .article-one img {
-        width: 350px;
+        width: 600px;
     }
 
     .article-one div p {
@@ -423,210 +460,293 @@ form .newsletter_submit {
         padding: 50px 50px 20px 50px;
         line-height: 35px;
     }
+    .article-two--left p {
+       margin: 0%;
+    }
 
     .article-two--right {
         padding: 55px 0 20px 0;
     }
 
     .article-two--right h3 {
-        font-size: 14px;
+        font-size: 10px;
         padding: 0;
     }
 
     .article-two--right p {
+        font-size: 10px;
+        padding: 5px 0px 10px 40px
+    }
+
+    .article-two--right span {
+        font-size: 10px;
+        margin: auto 5px auto 0;
+        padding: 7px 10px;
+    }
+
+    .card p {
+        padding: 20px 10px;
+    }
+
+    .footer-sup {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 350px;
+        text-align: center;
+    }
+
+    .footer-sup b {
+        width: 100%;
+        font-size: 35px;
+        padding: 20px 50px 0px 50px;
+        margin: auto 40px;
+    }
+
+    .footer-sup button {
+        margin: 0 30px 80px;
+
+    }
+
+    .footer-inf {
+        min-height: 100vh;
+        flex-direction: column-reverse;
+    }
+
+    .footer-suscripcion {
+        position: relative;
+        top: 80px;
+    }
+
+    .footer-suscripcion p {
+        position: relative;
+        top: calc(50% + 250px);
+        text-align: center;
+    }
+
+    .social-media {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: auto 20px;
+        position: relative;
+        bottom: 80px;
+    }
+
+    .social-media img {
+        padding: 20px 0 60px;
+    }
+
+    .social-media--icons i {
+        margin: auto 15px auto 15px;
+        padding: 40px 0 40px;
+    }
+
+    .footer-inf .nav-links {
+        position: relative;
+        right: calc(50% - 90px);
+        bottom: 60px;
+    }
+
+    .footer-inf .others-links {
+        padding: 0;
+        position: relative;
+        left: calc(50% - 90px);
+        top: 32px;
+    }
+}
+
+
+
+
+/* VERSION MOBILE */
+
+
+@media screen and (max-width: 600px) {
+
+    .testimony-cards {
+        display: none;
+    }
+
+
+    /* nav-bar */
+
+    nav button {
+        display: none;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav figure {
+        align-items: center;
+        margin: auto 40px;
+    }
+
+    nav h1 {
+        padding-bottom: 12px;
+    }
+
+    label img {
+        margin: auto 40px 14px 40px;
+    }
+
+    .nav-label {
+        margin: auto 5px auto 60px;
+    }
+
+
+    /* article one */
+    .article-one {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .article-one div h2 {
+        text-align: center;
+        padding: 0 20px 5px;
+    }
+
+    .article-one div p {
+        margin: auto 10px;
+        padding: 0 10px 0 10px;
+        text-align: left;
+    }
+
+    .article-one div button {
+        margin: 30px auto 5px;
+    }
+
+    .article-one div img {
+        width: 370px;
+    }
+
+
+
+
+    /* article two */
+
+    .article-two {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .article-two--left h2 {
+        text-align: center;
+    }
+
+    .article-two--left p {
+        color: var(--azulGrisaceo);
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        line-height: 30px;
+    }
+
+    .article-two--right {
+        display: flex;
+        flex-direction: column;
+        text-align: justify;
+    }
+
+    .article-two--right h3 {
+        padding: 0;
+        width: 100%;
+        background: var(--roloPalido);
+        line-height: 28px;
         font-size: 12px;
-        padding: 5px 0px 5px 80px;
     }
 
     .article-two--right span {
         font-size: 12px;
-        margin: auto 20px;
+        margin-right: 0;
         padding: 7px 20px;
+        position: relative;
+        right: 20px;
     }
-} */
+
+    .article-two--right p {
+        font-size: 12px;
+        padding: 5px 20px 20px;
+        margin: 0;
+        line-height: 20px;
+    }
+
+    /* SECTION TESTIMONY  cards*/
+    .mobile-version {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
 
 
-    /* VERSION MOBILE */
+    .carousel-indicators {
+        position: relative;
+        bottom: 40px;
+        text-align: center;
+
+    }
+
+    .carousel-indicators .button {
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        border-radius: 100%;
+        border: none;
+        background: none;
+        border: 1px solid var(--rojoBrillante);
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+        margin: -20px;
+        width: 10px;
+        height: 10px;
+
+    }
 
 
-    @media (max-width: 650px) {
+    .carousel-indicators .active {
+        background: var(--rojoBrillante);
+        border: 1px solid var(--rojoBrillante);
 
-        .testimony-cards {
-            display: none;
-        }
+    }
 
+    .carousel-item .carousel-img {
+        position: relative;
+        width: 80px;
+        left: calc(50% - 40px);
+        top: 45px;
+        z-index: 1;
+    }
 
-        /* nav-bar */
+    .card {
+        background-color: var(--grisClaro);
+        border: none;
+        margin-bottom: 40px;
+    }
 
-        nav button {
-            display: none;
-        }
+    .card b {
+        margin-top: 50px;
+    }
 
-        nav {
-            justify-content: center;
-        }
+    .card p {
+        padding: 10px 20px 40px;
+        text-align: center;
+    }
 
-        nav img {
-            margin: auto 40px auto 40px;
-        }
-
-        .nav-label {
-            margin: auto 5px auto 60px;
-        }
-
-
-        /* article one */
-        .article-one {
-            display: flex;
-            flex-direction: column-reverse;
-            text-align: center;
-        }
-
-        .article-one div h2 {
-            text-align: center;
-            padding: 0 20px 5px;
-        }
-
-        .article-one div p {
-            margin: auto 10px;
-            padding: 0 10px 0 10px;
-            text-align: left;
-        }
-
-        .article-one div button {
-            margin: 30px auto 5px;
-        }
-
-        .article-one div img {
-            width: 370px;
-        }
-
-
-
-
-        /* article two */
-
-        .article-two {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .article-two--left h2 {
-            text-align: center;
-        }
-
-        .article-two--left p {
-            color: var(--azulGrisaceo);
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            line-height: 30px;
-        }
-
-        .article-two--right {
-            display: flex;
-            flex-direction: column;
-            text-align: justify;
-        }
-
-        .article-two--right h3 {
-            padding: 0;
-            width: 100%;
-            background: var(--roloPalido);
-            line-height: 28px;
-        }
-
-        .article-two--right span {
-            font-size: 12px;
-            margin-right: 0;
-            padding: 7px 20px;
-            position: relative;
-            right: 25px;
-        }
-
-        .article-two--right p {
-            font-size: 12px;
-            padding: 5px 20px 20px;
-            margin: 0;
-            line-height: 20px;
-        }
-
-        /* SECTION TESTIMONY  cards*/
-        .mobile-version {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-        }
-
-
-        .carousel-indicators {
-            position: relative;
-            bottom: 40px;
-            text-align: center;
-
-        }
-
-        .carousel-indicators .button
-         {
-            display: inline-block;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 100%;
-            border: none;
-            background: none;
-            border: 1px solid var(--rojoBrillante);
-            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
-            margin: -20px;
-            width: 10px;
-            height: 10px;
-
-        }
-
-
-        .carousel-indicators .active {
-            background: var(--rojoBrillante);
-            border: 1px solid var(--rojoBrillante);
-
-        }
-
-        .carousel-item .carousel-img {
-            position: relative;
-            width: 80px;
-            left: calc(50% - 40px);
-            top: 45px;
-            z-index: 1;
-        }
-
-        .card {
-            background-color: var(--grisClaro);
-            border: none;
-            margin-bottom: 40px;
-        }
-
-        .card b {
-            margin-top: 50px;
-        }
-
-        .card p {
-            padding: 10px 20px 40px;
-            text-align: center;
-        }
-
-        .mobile-version button {
-            display: inline-block;
-            cursor: pointer;
-            padding: 15px 30px;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 50px;
-            border: none;
-            background-color: var(--rojoBrillante);
-            color: var(--blancoNatural);
-            box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
-            margin: 20px 0px 50px 0px;
-        }
+    .mobile-version button {
+        display: inline-block;
+        cursor: pointer;
+        padding: 15px 30px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 50px;
+        border: none;
+        background-color: var(--rojoBrillante);
+        color: var(--blancoNatural);
+        box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+        margin: 20px 0px 50px 0px;
     }
 
     /* FOOTER MOBILE */
@@ -652,7 +772,7 @@ form .newsletter_submit {
     }
 
     .footer-inf {
-        min-height: 50vh;
+        min-height: 100vh;
         flex-direction: column-reverse;
     }
 
@@ -663,9 +783,8 @@ form .newsletter_submit {
 
     .footer-suscripcion p {
         position: relative;
-        top: 260px;
+        top: calc(50% + 250px);
         text-align: center;
-
     }
 
     .social-media {
